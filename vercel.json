@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "https://acehnasjmgzysntxhrmy.supabase.co/functions/v1/app" }
+  ]
+}
