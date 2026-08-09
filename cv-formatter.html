@@ -1,0 +1,151 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Free CV Formatter | TalentLeap AI</title>
+<style>*{box-sizing:border-box}
+body{font-family:-apple-system,Segoe UI,Arial,sans-serif;background:linear-gradient(160deg,#f8fafc 0%,#eaeef5 100%);color:#1e293b;margin:0;min-height:100vh;padding:28px 20px}
+.wrap{display:flex;align-items:flex-start;justify-content:center;gap:22px;max-width:1220px;margin:0 auto;width:100%}
+.card{background:#fff;border:1px solid #e6eaf1;border-radius:18px;flex:0 0 620px;max-width:620px;width:100%;padding:34px 36px;box-shadow:0 24px 60px rgba(15,23,42,.12)}
+.logo{display:block;margin:0 auto 20px;max-width:230px;height:auto}
+.lead{text-align:center;font-size:17px;color:#0f2350;font-weight:600;margin:0 0 10px;line-height:1.45}
+.gdpr{text-align:center;font-size:13px;color:#334155;line-height:1.5;margin:0 auto 20px;max-width:540px;font-weight:500}
+.gdpr b{color:#334155}
+.consent{display:flex;align-items:flex-start;gap:9px;margin:6px 0 0;font-size:13px;color:#475569;line-height:1.45;text-align:left}
+.consent input{width:17px;height:17px;margin-top:1px;accent-color:#0c268f;flex:0 0 auto}
+.consent a{color:#0c268f;font-weight:600}
+#drop{border:2px dashed #c3ccdb;border-radius:12px;padding:32px 20px;text-align:center;cursor:pointer;transition:.15s;background:#f8fafc}
+#drop.drag{border-color:#0c268f;background:#eef4ff}#drop b{color:#0f2350;font-size:15px}#drop span{color:#64748b;font-size:13px}
+h4{margin:22px 0 10px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#0c268f;font-weight:700;border-bottom:1px solid #e6eaf1;padding-bottom:6px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.grid label{display:block;font-size:12px;color:#475569;margin-bottom:4px;font-weight:600}
+.grid .req label:after{content:" *";color:#e11d48}
+.grid input{width:100%;background:#fff;border:1px solid #cbd5e1;border-radius:8px;padding:10px 11px;color:#1e293b;font-size:14px}
+.grid input:focus{outline:none;border-color:#0c268f;box-shadow:0 0 0 3px rgba(12,38,143,.12)}.full{grid-column:1 / -1}
+.btn{background:#0c268f;color:#fff;border:0;border-radius:10px;padding:14px 18px;font-weight:700;cursor:pointer;font-size:15px;width:100%;margin-top:20px;transition:.15s}
+.btn:hover:not(:disabled){background:#0a1f74}.btn:disabled{opacity:.4;cursor:default}
+#status{margin-top:16px;text-align:center;font-size:14px;min-height:20px}.ok{color:#15803d}.err{color:#dc2626}
+.dl{display:inline-block;margin-top:12px;background:#16a34a;color:#fff;padding:13px 20px;border-radius:10px;font-weight:700;text-decoration:none}
+.spin{display:inline-block;width:16px;height:16px;border:2px solid #cbd5e1;border-top-color:#0c268f;border-radius:50%;animation:s .7s linear infinite;vertical-align:middle;margin-right:8px}@keyframes s{to{transform:rotate(360deg)}}
+.cta{margin-top:28px;padding-top:24px;border-top:1px solid #e6eaf1;text-align:center}
+.cta-q{font-size:23px;font-weight:800;color:#0c268f;line-height:1.35;margin:0 0 10px}
+.cta-e{font-size:15.5px;color:#334155;margin:0}
+.cta-e a{color:#0c268f;font-weight:700;text-decoration:none}
+.cta-e a:hover{text-decoration:underline}
+/* advertising sidebars */
+.ad{background:#fff;border:1px solid #e6eaf1;border-radius:18px;flex:0 0 274px;width:274px;padding:26px 24px;box-shadow:0 24px 60px rgba(15,23,42,.12);position:sticky;top:28px}
+.ad-h{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:#0c268f;font-weight:800;margin:0 0 4px}
+.ad-sub{font-size:18px;font-weight:800;color:#0f2350;line-height:1.3;margin:0 0 16px}
+.svc{list-style:none;margin:0 0 20px;padding:0}
+.svc li{position:relative;padding:0 0 0 24px;margin:0 0 11px;font-size:13.5px;line-height:1.4;color:#334155;font-weight:500}
+.svc li:before{content:"";position:absolute;left:0;top:2px;width:15px;height:15px;border-radius:50%;background:#0c268f}
+.svc li:after{content:"";position:absolute;left:5px;top:6px;width:4px;height:7px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.ad-cta{display:block;background:#0c268f;color:#fff;text-align:center;text-decoration:none;padding:13px 14px;border-radius:10px;font-weight:800;font-size:14.5px;transition:.15s}
+.ad-cta:hover{background:#0a1f74}
+.ad-note{text-align:center;font-size:12px;color:#64748b;margin:9px 0 0}
+@media(max-width:1080px){
+.wrap{flex-direction:column;align-items:center;gap:22px}
+.card{order:1;flex-basis:auto}
+.ad-left{order:2}.ad-right{display:none}
+.ad{position:static;width:100%;max-width:620px;flex-basis:auto}
+}</style></head>
+<body><div class="wrap">
+
+<aside class="ad ad-left">
+<p class="ad-h">AI Consulting Services</p>
+<p class="ad-sub">Could you benefit from the following?</p>
+<ul class="svc">
+<li>AI CV Screening &amp; Scoring</li>
+<li>Automated Candidate Sourcing</li>
+<li>Personalised Client Outreach</li>
+<li>Candidate Availability Tracking</li>
+<li>AI Database Cleansing</li>
+<li>Inbox &amp; Email Management</li>
+<li>AI Email Marketing</li>
+<li>Bespoke Website &amp; Recruitment Plugins (Lusha, PhantomBuster, Clay)</li>
+<li>CRM &amp; Admin AI Assistant</li>
+<li>Two-Way WhatsApp &amp; SMS</li>
+<li>Call Recording &amp; Transcription</li>
+<li>Compliance &amp; Reference Automation</li>
+<li>Live Dashboards &amp; Reporting</li>
+<li>Claude &amp; AI Team Training</li>
+</ul>
+<a class="ad-cta" href="#">Book a free video call</a>
+<p class="ad-note">A 30-minute Zoom with Simon Kenna</p>
+</aside>
+
+<div class="card">
+<img class="logo" src="/logo.png" alt="TalentLeap AI">
+<p class="lead">Upload your CV, enter the fields and get back your CV in seconds.</p>
+<p class="gdpr"><b>Your CV is never stored.</b> It is processed and permanently deleted the moment it is formatted. We do keep the details you enter so we can be in touch. GDPR compliant.</p>
+<div id="drop"><b>Drop a CV here</b><br><span>or click to choose a file (PDF / DOCX, max 4MB)</span><input id="file" type="file" accept=".pdf,.doc,.docx" hidden></div>
+
+<h4>Candidate details</h4>
+<div class="grid">
+<div class="req"><label>Candidate first name</label><input id="first_name" placeholder="e.g. John"></div>
+<div class="req"><label>Candidate last name</label><input id="last_name" placeholder="e.g. Sample"></div>
+<div class="req"><label>Salary / day rate</label><input id="salary" placeholder="e.g. &pound;75,000"></div>
+<div class="req"><label>Availability</label><input id="availability" placeholder="e.g. 2 weeks notice"></div>
+<div class="full req"><label>Location</label><input id="location" placeholder="e.g. Watford, Hertfordshire"></div>
+</div>
+
+<h4>Your details</h4>
+<div class="grid">
+<div class="req"><label>Full name</label><input id="your_name" placeholder="Your full name"></div>
+<div class="req"><label>Company</label><input id="company" placeholder="Your agency"></div>
+<div class="req"><label>Work email</label><input id="your_email" type="email" placeholder="you@agency.com"></div>
+<div class="req"><label>Telephone</label><input id="your_phone" placeholder="Direct line / mobile"></div>
+</div>
+
+<label class="consent"><input type="checkbox" id="consent">I am happy for TalentLeap to store the details I enter and contact me about its services. The CV itself is never stored. <a href="https://talentleap.ai/privacy" target="_blank" rel="noopener">Privacy Policy</a></label>
+<button id="go" class="btn" disabled>Format &amp; download CV</button>
+<div id="status"></div><div id="result" style="text-align:center"></div>
+<div class="cta"><p class="cta-q">Would you like your own personalised CV formatter built into your website?</p><p class="cta-e">Email <a href="mailto:simon@talentleap.ai">simon@talentleap.ai</a> for more information</p></div>
+</div>
+
+<aside class="ad ad-right">
+<p class="ad-h">AI Consulting Services</p>
+<p class="ad-sub">Could you benefit from the following?</p>
+<ul class="svc">
+<li>AI CV Screening &amp; Scoring</li>
+<li>Automated Candidate Sourcing</li>
+<li>Personalised Client Outreach</li>
+<li>Candidate Availability Tracking</li>
+<li>AI Database Cleansing</li>
+<li>Inbox &amp; Email Management</li>
+<li>AI Email Marketing</li>
+<li>Bespoke Website &amp; Recruitment Plugins (Lusha, PhantomBuster, Clay)</li>
+<li>CRM &amp; Admin AI Assistant</li>
+<li>Two-Way WhatsApp &amp; SMS</li>
+<li>Call Recording &amp; Transcription</li>
+<li>Compliance &amp; Reference Automation</li>
+<li>Live Dashboards &amp; Reporting</li>
+<li>Claude &amp; AI Team Training</li>
+</ul>
+<a class="ad-cta" href="#">Book a free video call</a>
+<p class="ad-note">A 30-minute Zoom with Simon Kenna</p>
+</aside>
+
+</div>
+<script>
+// Booking CTA target. Swap CAL_URL to the Google Calendar booking link when ready.
+var CAL_URL="https://calendar.app.google/K3bm8uF2bTptgXSc8";
+document.querySelectorAll('.ad-cta').forEach(function(a){a.href=CAL_URL;});
+const FN="https://semidxbhkaxxchqebmza.supabase.co/functions/v1/cvformat-web";
+const drop=document.getElementById('drop'),file=document.getElementById('file'),go=document.getElementById('go'),statusEl=document.getElementById('status'),result=document.getElementById('result');
+let chosen=null;
+var REQ=['first_name','last_name','salary','availability','location','your_name','company','your_email','your_phone'];
+function refresh(){var all=REQ.every(function(id){return document.getElementById(id).value.trim();});var consented=document.getElementById('consent').checked;go.disabled=!(chosen && all && consented);}
+function pick(f){chosen=f;drop.querySelector('b').textContent=f.name;statusEl.textContent='';result.innerHTML='';refresh();}
+drop.onclick=()=>file.click();file.onchange=e=>{if(e.target.files[0])pick(e.target.files[0]);};
+REQ.forEach(function(id){document.getElementById(id).oninput=refresh;});
+document.getElementById('consent').onchange=refresh;
+drop.ondragover=e=>{e.preventDefault();drop.classList.add('drag');};drop.ondragleave=()=>drop.classList.remove('drag');
+drop.ondrop=e=>{e.preventDefault();drop.classList.remove('drag');if(e.dataTransfer.files[0])pick(e.dataTransfer.files[0]);};
+go.onclick=async()=>{if(!chosen)return;go.disabled=true;result.innerHTML='';statusEl.innerHTML='<span class="spin"></span>Formatting through AI...';
+try{const fd=new FormData();fd.append('file',chosen);
+['first_name','last_name','salary','availability','location','your_name','company','your_email','your_phone'].forEach(id=>{const v=document.getElementById(id).value.trim();if(v)fd.append(id,v);});
+fd.append('consent', document.getElementById('consent').checked ? 'true' : 'false');
+const r=await fetch(FN,{method:'POST',body:fd});const j=await r.json();
+if(!j.ok){statusEl.innerHTML='<span class="err">'+(j.error||'Something went wrong')+'</span>';refresh();return;}
+statusEl.innerHTML='<span class="ok">Done - '+(j.candidate_name||'CV')+' formatted.</span>';
+const bytes=Uint8Array.from(atob(j.docx_base64),c=>c.charCodeAt(0));const blob=new Blob([bytes],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});const url=URL.createObjectURL(blob);
+result.innerHTML='<a class="dl" download="'+j.filename+'" href="'+url+'">Download '+j.filename+'</a>';refresh();
+}catch(err){statusEl.innerHTML='<span class="err">Error: '+err.message+'</span>';refresh();}};
+</script></body></html>
