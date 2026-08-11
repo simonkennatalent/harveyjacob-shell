@@ -1,20 +1,81 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TalentLeap One</title>
-    <link rel="icon" type="image/png" href="/one-icon.png?v=4" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/tlone-32.png?v=4" />
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/tlone-180.png?v=4" />
-    <script type="module" crossorigin src="/assets/index-1wI5CakD.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/vendor-icons-BsmIMKLJ.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-react-CAoKzrx9.js">
-    <link rel="modulepreload" crossorigin href="/assets/vendor-supabase-ClVc2H6D.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-7zOa3zN3.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harvey Jacob</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230c303c'/%3E%3Ctext x='16' y='22' font-size='14' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'%3EHJ%3C/text%3E%3C/svg%3E">
+<style>
+  :root{--teal:#0c303c;--teal2:#124454;--accent:#1d9e75;--line:#e2e7ea;--grey:#eef2f4;--mut:#5b6b73;--ink:#0c303c}
+  *{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  body{margin:0;background:var(--grey);color:var(--ink);font-size:14px}
+  .hide{display:none!important}
+  input,select,textarea{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px 12px;font-size:14px;background:#fff;outline:none}
+  input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(12,48,60,.08)}
+  textarea{resize:vertical}
+  label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--mut);margin:12px 0 5px}
+  .btn{border:1px solid var(--teal);border-radius:9px;padding:10px 16px;font-weight:600;font-size:14px;cursor:pointer;background:#fff;color:var(--teal)}
+  .btn.primary{background:var(--teal);color:#fff}
+  .btn.ghost{background:#fff;color:var(--mut);border:1px solid var(--line)}
+  .btn.sm{padding:5px 11px;font-size:12px}
+  .btn.danger{color:#b91c1c;border-color:#f0caca;background:#fff}
+  #login{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#0c303c,#124454)}
+  .loginCard{background:#fff;border-radius:16px;padding:30px 30px;width:342px;box-shadow:0 20px 50px rgba(0,0,0,.28)}
+  .brand{display:flex;align-items:center;gap:11px;margin-bottom:2px}
+  .brandmark{width:36px;height:36px;border-radius:9px;background:#0c303c;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+  .brand .nm{font-size:20px;font-weight:700;color:#0c303c}
+  header{background:var(--teal);color:#fff;position:sticky;top:0;z-index:5}
+  .top{display:flex;align-items:center;gap:14px;padding:13px 22px}
+  .top .brandmark{width:30px;height:30px;border-radius:7px;font-size:13px}
+  .top .nm{font-size:18px;font-weight:700}
+  .top .sp{flex:1}
+  .top .who{font-size:12.5px;color:rgba(255,255,255,.72)}
+  .top .link{color:rgba(255,255,255,.82);text-decoration:none;font-size:13px;font-weight:600;cursor:pointer}
+  .nav{display:flex;gap:5px;padding:0 22px 12px;flex-wrap:wrap}
+  .navb{background:transparent;color:rgba(255,255,255,.8);border:none;border-radius:8px;padding:8px 14px;font-weight:600;font-size:13.5px;cursor:pointer}
+  .navb:hover{background:rgba(255,255,255,.12)}
+  .navb.on{background:#fff;color:var(--teal)}
+  .wrap{max-width:1220px;margin:0 auto;padding:22px}
+  h1{font-size:22px;margin:0 0 2px}
+  h2{font-size:17px}
+  .sub{color:var(--mut);font-size:13px;margin:0 0 16px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .muted{color:var(--mut);font-size:12px}
+  .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .sp{flex:1}
+  .board{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:start}
+  .colhd{background:var(--teal);color:#fff;text-align:center;font-weight:600;font-size:12.5px;padding:8px;border-radius:8px 8px 0 0}
+  .step{background:#fff;border:1px solid var(--line);border-left:3px solid #999;border-radius:8px;padding:9px 10px;margin-top:8px;cursor:pointer}
+  .step:hover{box-shadow:0 2px 10px rgba(12,48,60,.12)}
+  .step .t{font-size:12.5px;font-weight:600;line-height:1.3}
+  .step .meta{font-size:10.5px;color:var(--mut);margin-top:3px;line-height:1.45}
+  .chip{display:inline-block;font-size:9.5px;background:var(--grey);color:var(--mut);border-radius:4px;padding:1px 6px;margin:3px 3px 0 0}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:11px;text-transform:uppercase;color:var(--mut);padding:0 8px 8px 0;letter-spacing:.4px}
+  td{padding:9px 8px 9px 0;border-top:1px solid var(--line);font-size:13px;vertical-align:middle}
+  .ov{position:fixed;inset:0;background:rgba(12,48,60,.5);display:flex;align-items:center;justify-content:center;z-index:50;padding:20px}
+  .modal{background:#fff;border-radius:14px;padding:22px 24px;width:580px;max-width:100%;max-height:90vh;overflow:auto}
+</style>
+</head>
+<body>
+<div id="login">
+  <div class="loginCard">
+    <div class="brand"><span class="brandmark">HJ</span><span class="nm">Harvey Jacob</span></div>
+    <p class="muted" style="margin:2px 0 16px">Payroll operations</p>
+    <label>Email</label><input id="liEmail" type="email" autocomplete="username">
+    <label>Password</label><input id="liPw" type="password" autocomplete="current-password">
+    <button class="btn primary" id="liBtn" style="width:100%;margin-top:18px">Sign in</button>
+    <div id="liMsg" class="muted" style="margin-top:10px;min-height:16px"></div>
+  </div>
+</div>
+<div id="app" class="hide">
+  <header>
+    <div class="top"><span class="brandmark">HJ</span><span class="nm">Harvey Jacob</span><span class="sp"></span><span id="who" class="who"></span><a class="link" id="signout">Sign out</a></div>
+    <div class="nav" id="nav"></div>
+  </header>
+  <div class="wrap" id="view"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/app.js"></script>
+</body>
 </html>
